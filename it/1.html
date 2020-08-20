@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Q1
+        </title>
+        <script>
+            let rollno=document.getElementById('rollno');
+            let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var letters = /^[A-Za-z]+$/;
+           function handlesubmit(){
+               let no=Number(rollno.value);
+               let dob=new Date(document.getElementById('dob').value);
+               let name=document.getElementById('name').value;
+               if(rollno.value.length!=7&&isNaN(no)!=false)
+               {
+                   alert("Roll no should contain 7 numbers")
+               }
+               if(typeof(name)!='string'||name.match(letters)!=true){
+                   alert("Name should only contain alphabetical value");
+               }
+               document.getElementById("content").innerHTML=`${days[dob.getDay()]},${months[dob.getMonth()]}  ${dob.getDate()},${dob.getFullYear()}`
+           }
+        </script>
+    </head>
+    <body>
+        <form action="#" onsubmit="handlesubmit()">
+            Name:<input type="text" placeholder="Name" id="name" required><br><br>
+            Roll No:<input type="text" placeholder="Rollno" id="rollno" required><br><br>
+            DOB<input type="date" id="dob" required><br><br>
+            <button id="button">Submit</button>
+        </form>
+        <p id="content"></p>
+    </body>
+</html>
