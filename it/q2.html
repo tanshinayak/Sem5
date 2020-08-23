@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <script>
+            function check_valid()
+            {
+                var uname=document.getElementById("uname").value;
+                var pass=document.getElementById("pass").value;
+                if(uname.length==0||pass.length==0)
+                {
+                    alert("One or more values missing");
+                }else if(uname=="Tanshi Nayak"&&pass=="tanshi123")
+                {
+                    alert("Welcome "+uname);
+                }else
+                {
+                    alert("Invalid Credentials");
+                }
+            }
+        </script>
+    </head>
+    <body style="text-align: center; margin-top: 80pt;">
+        <form onsubmit="check_valid()">
+            <h1>Login</h1>
+            <label>USERNAME</label><br><input type="text" id="uname"><br>
+            <label>PASSWORD</label><br><input type="password" id="pass"><br>
+            <button style="margin-top: 10pt;">Submit</button>
+        </form>
+    </body>
+</html>

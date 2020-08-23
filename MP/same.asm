@@ -9,12 +9,11 @@ var2 DB 10,"entered value is $"
    
    MOV AX,@DATA
    MOV DS,AX
-  ;MOV DX,OFFSET var1
   LEA DX,VAR1
    Mov AH,9h
    INT 21H
    
-   Mov AH,8h
+   Mov AH,1h
    INT 21H
    
    LEA DX,VAR2

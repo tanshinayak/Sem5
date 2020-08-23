@@ -4,6 +4,15 @@
         <title>
             Q1
         </title>
+    </head>
+    <body>
+        <form action="#" onsubmit="handlesubmit()">
+            Name:<input type="text" placeholder="Name" id="name" required><br><br>
+            Roll No:<input type="text" placeholder="Rollno" id="rollno" required><br><br>
+            DOB<input type="date" id="dob" required><br><br>
+            <button id="button">Submit</button>
+        </form>
+        <p id="content"></p>
         <script>
             let rollno=document.getElementById('rollno');
             let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -23,14 +32,5 @@
                document.getElementById("content").innerHTML=`${days[dob.getDay()]},${months[dob.getMonth()]}  ${dob.getDate()},${dob.getFullYear()}`
            }
         </script>
-    </head>
-    <body>
-        <form action="#" onsubmit="handlesubmit()">
-            Name:<input type="text" placeholder="Name" id="name" required><br><br>
-            Roll No:<input type="text" placeholder="Rollno" id="rollno" required><br><br>
-            DOB<input type="date" id="dob" required><br><br>
-            <button id="button">Submit</button>
-        </form>
-        <p id="content"></p>
     </body>
 </html>
