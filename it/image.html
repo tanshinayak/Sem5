@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+    <img id='demo' src="abc.jpg" height="500px" width="500px">
+
+<script>
+document.getElementById("demo").addEventListener("mouseover", mouseOver);
+document.getElementById("demo").addEventListener("mouseout", mouseOut);
+
+function mouseOver() {
+  document.getElementById("demo").src ='demo.jpg';
+}
+
+function mouseOut() {
+  document.getElementById("demo").src='panda.jpg';
+}
+</script>
+
+</body>
+</html>
+
