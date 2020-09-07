@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const focusf=()=>{
+                    document.getElementById("num").style.background="yellow";
+                }
+        const handlesubmit=()=>{
+            let num=document.getElementById("num").value;
+            if(!Number(num))
+            {
+                alert("Please enter a numeric value");
+                document.getElementById("num").style.background="yellow";
+            }
+            else{
+                document.getElementById("p").innerHTML="Number is "+num;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="handlesubmit()">
+        <input type="text" id="num" onfocus="focusf()">
+    </form>
+    <p id="p"></p>
+</body>
+</html>

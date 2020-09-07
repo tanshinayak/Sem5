@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head><title>PRACTICE QUES 2</title></head>
+    <body>
+        <h1>Finding sum of series 1/2+3/4+5/6...</h1>
+        <label>Enter number of terms in seies</label>
+        <input id="no" type="text">
+        <input type="submit" onclick="sum();"\>
+        <script>
+            function sum()
+            {
+                var no=document.getElementById("no").value;
+                if(no.length==0||(/[^0-9]/.test(no)))
+                {
+                    alert("Invalid Number of terms");
+                }else
+                {
+                    var sum=0.0;
+                    var odd;
+                    for(var i=1,j=1;i<=2*no;i=i+2,j++)
+                    {
+                        even=i+1;
+                        sum=sum+i/even;
+                    }
+                    alert("Sum of series is "+sum);
+                }
+            }
+        </script>
+    </body>
+</html>

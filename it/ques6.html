@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const handlesubmit=()=>{
+            let rbs = document.getElementsByName('name')
+                let selectedValue;
+                for (const rb of rbs) {
+                    if (rb.checked) {
+                        selectedValue = rb.value;
+                        break;
+                    }
+                }
+    
+            let cbs = document.getElementsByName('interest')        
+                let cbselect ="";
+                for (const cb of cbs) {
+                    if (cb.checked) {
+                        cbselect += cb.value + ",";
+                    }
+                }
+            let firstname=document.getElementById('firstname').value;
+            let lastname=document.getElementById('lastname').value;
+            let email=document.getElementById('email').value;
+            let address=document.getElementById('address').value;
+            let city=document.getElementById('city').value;
+            let state=document.getElementById('state').value;
+            let code=document.getElementById('code').value;
+            let country=document.getElementById('country').value;
+            let comment=document.getElementById("comment").value;
+            if(firstname=="")
+            {
+                alert("Please enter the first Name");
+            }
+            else if(lastname==""){
+                alert("Please enter the Last Name");
+            }
+            else if(email==""){
+                alert("Please enter the Email Address");
+            }
+            else if(address==""){
+                alert("Please enter the Address");
+            }
+            else if(city==""){
+                alert("Please enter the City");
+            }
+            else if(state==""){
+                alert("Please enter the State");
+            }
+            else if(code==""){
+                alert("Please enter the Pin code");
+            }
+            else if(country==""){
+                alert("Please enter the Country Name");
+            }
+            else if(comment=="")
+            {
+                alert("Please enter Comment");
+            }
+            else{
+            let display=document.getElementById("p");
+            console.log(display.innerHTML);
+            display.innerHTML="Name: "+firstname+lastname+" Email: "+email+" Address: "+address+
+            city+state+code+country+" Preference :" +rbs+" Interest: "+cbs };
+        }
+        </script>
+</head>
+<body>
+    <h1>INFONET SERVICES</h1>
+    <form id="form">
+        <input type="text" id="firstname"><label id="label">First Name</label>
+        <br><br>
+        <input type="text" id="lastname"><label id="label">Last Name</label>
+        <br><br>
+        <input type="text" id="email"><label id="label">Email Address</label>
+        <br><br>
+        <input type="text" id="address"><label id="label">Address</label>
+        <br><br>
+        <input type="text" id="city"><label id="label">City</label>
+        <br><br>
+        <input type="text" id="state"><label id="label">State</label>
+        <input type="text" id="code"><label id="label">Postal Code</label>
+        <input type="text" id="country"><label id="label">Country</label>
+        <h4><i>Please choose the most appropriate statement</i></h4>
+        <input type="radio" name="name"><label> I regularly buy items online</label><br>
+        <input type="radio" name="name"><label> I have on occasion purchased items online</label><br>
+        <input type="radio" name="name"><label> I have not purchased anything online, but I would consider it.</label><br>
+        <input type="radio" name="name"><label> I prefer to shop in real stores</label><br>
+        <h4><i>I'm interested in (choose all that reply)</i></h4>
+        <input type="checkbox" name="interest"><label> Hiking</label><br>
+        <input type="checkbox" name="interest"><label> Mountain Biking</label><br>
+        <input type="checkbox" name="interest"><label>Camping</label><br>
+        <input type="checkbox" name="interest"><label> Rock Climbing</label><br>
+        <input type="checkbox" name="interest"><label> Off-Road 4WD</label><br>
+        <input type="checkbox" name="interest"><label> Cross-Country Skiing</label><br>
+        <h4><i>I learned about this site from</i></h4>
+        <select>
+            <option>Print Ads</option>
+            <option>Facebook</option>
+            <option>Instagram</option>
+            <option>Friends</option>
+            <option>Linkedln</option>
+        </select>
+        <h4><i>Comments</i></h4>
+        <textarea id="comment" style="overflow-y: scroll;"></textarea><br>
+        <button id="submit" onclick="handlesubmit()">Submit</button>
+        <button id="start">Start Over</button>
+    </form>
+    <p id="p"></p>
+</body>
+</html>

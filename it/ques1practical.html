@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Practice ques 1</title></head>
+    
+    <body>
+        <label>TEXTBOX</label><br>
+        <input type="text" id="txt" onfocus="focusfun()" onblur="blurfun()" onchange="change()">
+        <script>
+            var txt=document.getElementById("txt");
+            function focusfun() {
+              txt.style.background = "blue";
+            }
+            function blurfun() {
+              txt.style.background = "red";
+            }
+            function change(){
+                alert("onChange event");
+            }
+        </script>
+    </body>
+</html>

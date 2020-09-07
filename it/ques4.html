@@ -15,10 +15,10 @@
         var div = document.getElementById("check")
         var size = parseInt(prompt("Enter length of array"))
         var arr = new Array(size)
-        var top1= -1
+        var top= -1
         function push( )
         {
-            if(top1 >= size-1)
+            if(top >= size-1)
             {
                 document.getElementById("check").innerHTML = "Stack Overflow"
             }
@@ -26,8 +26,8 @@
             {
                 
                 let pushed = parseInt(prompt("Enter an element"))
-                ++top1;
-                arr[top1] = pushed
+                ++top;
+                arr[top] = pushed
                
             }
             
@@ -36,13 +36,13 @@
         function pop()
         {   
             let el;
-            if(top1 == -1)
+            if(top == -1)
             {
                 document.getElementById("check").innerHTML = "Stack Underflow"
             }
             else{
-                el= arr[top1];
-                top1--;
+                el= arr[top];
+                top--;
             }
         }
 
@@ -50,7 +50,7 @@
         {
            
             var html='';
-            for (let i=0; i<=top1; i++) {
+            for (let i=0; i<=top; i++) {
              html+='<div>'+arr[i]+'</div>';
             }
             div.innerHTML+= html;
