@@ -1,0 +1,31 @@
+%option noyywrap
+%{ 
+#include<stdio.h> 
+int l=1,flag=0,s=0,ch=0,w=0,cc=0; 
+%} 
+  
+%% 
+
+\n {l++;}
+([ ])+ s++;
+
+([a-zA-Z0-9])* { w++;ch=ch+yyleng ;} 
+. ch++;  
+<<EOF>> {flag=1;return 0;}   
+%% 
+  
+int main() 
+{ 
+    
+    yyin=fopen("q11_pooja.txt","r");
+    yylex(); 
+    if(flag==1&&ch==0)
+    {  
+     printf("\nfile empty");
+     return 0;}
+     
+     printf("\nNo. of lines=%d", l); 
+     printf("\nNo. of spaces=%d", s); 
+    printf("\nNo. of other characters=%d", ch); 
+   printf("\nNo. of words=%d", w); 
+} 
