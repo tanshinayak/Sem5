@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{ 
+  float a=4.0;
+//atharv
+/*int a=10;
+float=11.46;
+*/
+       return 0;
+}
